@@ -1,0 +1,6 @@
+librosa==0.10.2.post1
+numpy==2.2.2
+scikit_learn==1.6.1
+scipy==1.15.1
+torch==2.7.0.dev20250116+cu126
+umap_learn==0.5.7
