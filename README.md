@@ -8,6 +8,7 @@ Recommend songs based on a song in terms of its audio features of:
 * Tonnetz
 
 ## Example Usage
+Add the path to the directory containing the songs
 ```python
 if __name__ == "__main__":
     path = ""
