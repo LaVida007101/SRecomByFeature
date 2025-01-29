@@ -129,24 +129,3 @@ def recommend_songs(song_name, features, song_names, top_n=10):
     distances = cdist(features[song_idx].reshape(1, -1), features, metric='euclidean').flatten()
     recommendations = np.argsort(distances)[1:top_n + 1]
     return [song_names[idx] for idx in recommendations]
-
-
-if __name__ == "__main__":
-    path = ""
-
-    try:
-        # Process directory and extract features
-        raw_features = process_directory(path)
-
-        # Normalize and reduce dimensions
-        normalized_features, song_names = normalize_features(raw_features)
-        reduced_features = reduce_dimensions(normalized_features, n_components=10)
-
-        anchor_song = song_names[0] 
-        recommendations = recommend_songs(anchor_song, reduced_features, song_names)
-
-        print(f"\nRecommendations for '{anchor_song}':")
-        for rec in recommendations:
-            print(f"  {rec}")
-    except Exception as e:
-        print(f"Error: {e}")
