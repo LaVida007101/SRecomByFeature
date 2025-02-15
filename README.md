@@ -9,7 +9,7 @@ This downloads the songs using [spotify-dl](https://pypi.org/project/spotify-dl/
   
 A Client ID and Client Secret is needed from a [Spotify Developer Account](https://developer.spotify.com/)
 
-navitage to the project directory and run the script, using the command: `python srecom.py link-to-the-playlist`.  
+Navitage to the project directory and run the script, using the command: `python srecom.py link-to-the-playlist`.  
   
 The generated playlist will be named 'Generated Playlist'  
 
