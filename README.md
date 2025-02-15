@@ -1,31 +1,21 @@
-# Song Recommender By Audio Features
-Recommend songs based on a song in terms of its audio features of:
+# SRecomByFeature
+##### Spotify has deprecrated the recommendations endpoint so the daily playlists are now to be manually added to a user-owned single playlist inside the Spotify app
+Recommend songs based on audio features from playlists based on user's short-term top tracks and create a playlist with the recommendations.
 
-* MFCCs
-* RMS Energy
-* Spectral Centroid
-* Spectral Rolloff
-* Tonnetz
+# Usage
+This downloads the songs using [spotify-dl](https://pypi.org/project/spotify-dl/) to extract its audio features (Deleted after), an appropriate amount of storage space is required depending on how many songs there are in the playlist  
 
-## Example Usage
-Add the path to the directory containing the songs
-```python
-if __name__ == "__main__":
-    path = ""
 
-    try:
-        # Process directory and extract features
-        raw_features = process_directory(path)
+  
+A Client ID and Client Secret is needed from a [Spotify Developer Account](https://developer.spotify.com/)
 
-        # Normalize and reduce dimensions
-        normalized_features, song_names = normalize_features(raw_features)
-        reduced_features = reduce_dimensions(normalized_features, n_components=10)
+navitage to the project directory and run the script, using the command:  
+`python srecom.py link-to-the-playlist`.  
+The generated playlist will be named 'Generated Playlist'  
 
-        anchor_song = song_names[0] 
-        recommendations = recommend_songs(anchor_song, reduced_features, song_names)
+The entire process could take up to minutes depending on how large the playlist is
 
-        print(f"\nRecommendations for '{anchor_song}':")
-        for rec in recommendations:
-            print(f"  {rec}")
-    except Exception as e:
-        print(f"Error: {e}")
+
+
+
+
